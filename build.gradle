@@ -1,0 +1,18 @@
+plugins {
+    id "base"
+    id "com.moowork.node" version "1.2.0"
+}
+
+group "daggerok"
+version "0.0.1"
+
+node {
+    download = true
+}
+
+build.dependsOn 'yarn_-i'
+build.dependsOn yarn_test
+
+wrapper {
+    gradleVersion = "4.2.1"
+}

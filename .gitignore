@@ -1,0 +1,9 @@
+.gradle/
+build/
+.idea/
+*.iml
+*.ipr
+*.iws
+node_modules/
+package-lock.json
+yarn.lock
