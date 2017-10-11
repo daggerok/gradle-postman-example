@@ -1,0 +1,21 @@
+= Run postman tests using Gradle image:https://travis-ci.org/daggerok/gradle-postman-example.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/gradle-postman-example"]
+
+This repository contains example how to execute postman collection tests using gradle (newman node package
+
+. `src/test/json` - add postman collection with tests
+. `package.json` - add test task test:n
+
+.unix
+----
+bash gradlew clean build
+----
+
+.windows
+----
+gradlew clean build
+----
+
+links:
+
+. link:https://github.com/postmanlabs/newman[newman npm package (postman runner)]
+. link:https://github.com/srs/gradle-node-plugin/blob/master/docs/node.md[gradle node plugin]
