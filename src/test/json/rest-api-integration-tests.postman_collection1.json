@@ -1,9 +1,9 @@
 {
 	"variables": [],
 	"info": {
-		"name": "rest-api-integration-tests 1",
+		"name": "rest-api-integration-tests 2",
 		"_postman_id": "42f48731-c6b2-d69b-d7a6-2f1c8900f4ed",
-		"description": "first collection",
+		"description": "second collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [

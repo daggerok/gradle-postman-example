@@ -4,6 +4,8 @@ This repository contains example how to execute postman collection tests using g
 
 . `src/test/json` - add postman collection with tests
 . `package.json` - add test task test:n
+. run `gradle build` to test and build single html report
+. open in browser `build/postman/index.html`
 
 .unix
 ----
@@ -17,5 +19,6 @@ gradlew
 
 links:
 
+. link:https://www.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman[Reference]
 . link:https://github.com/postmanlabs/newman[newman npm package (postman runner)]
 . link:https://github.com/srs/gradle-node-plugin/blob/master/docs/node.md[gradle node plugin]
