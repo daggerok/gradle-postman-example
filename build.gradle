@@ -8,11 +8,16 @@ version "0.0.1"
 
 node {
     download = true
+    version = "9.4.0"
+    yarnVersion = "1.3.2"
+    npmVersion = "3.10.10"
 }
 
-build.dependsOn 'yarn_-i'
+defaultTasks"clean", "build"
+
+build.dependsOn "yarn_-i"
 build.dependsOn yarn_test
 
 wrapper {
-    gradleVersion = "4.2.1"
+    gradleVersion = "4.5"
 }
