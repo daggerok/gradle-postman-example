@@ -73,5 +73,6 @@ clean.doFirst {
 }
 
 wrapper {
-    gradleVersion = "4.5"
+    gradleVersion = "4.6"
+    distributionType = "ALL"
 }
