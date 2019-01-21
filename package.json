@@ -12,8 +12,6 @@
     "test:0": "newman run --disable-unicode --color true --reporters html ./src/test/json/rest-api-integration-tests.postman_collection.json",
     "test:1": "newman run --disable-unicode --color true --reporters html ./src/test/json/rest-api-integration-tests.postman_collection1.json",
     "test:2": "newman run --disable-unicode --color true --reporters html ./src/test/json/rest-api-integration-tests.postman_collection2.json",
-    "test:insecure": "npm run test:2 -- --insecure",
-    "test:insecure-too": "yarn test:2 -- --insecure",
-    "test:also-insecure": "yarn test:2 --insecure"
+    "test:insecure": "npm run test:2 -- --insecure"
   }
 }

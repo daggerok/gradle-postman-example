@@ -1,35 +1,35 @@
 {
-	"variables": [],
-	"info": {
-		"name": "rest-api-integration-tests 3",
-		"_postman_id": "42f48731-c6b2-d69b-d7a6-2f1c8900f4ed",
-		"description": "third collection",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "0-get",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code name has string\"] = responseCode.name.has(\"OK\");",
-							"",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;"
-						]
-					}
-				}
-			],
-			"request": {
-				"url": "https://daggerok.github.io/soapui-runner/api/test-data/soapui.json",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		}
-	]
+  "variables": [],
+  "info": {
+    "name": "rest-api-integration-tests 3",
+    "_postman_id": "42f48731-c6b2-d69b-d7a6-2f1c8900f4ed",
+    "description": "third collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "0-get",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code name has string\"] = responseCode.name.has(\"OK\");",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://daggerok.github.io/soapui-runner/api/test-data/soapui.json",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": ""
+      },
+      "response": []
+    }
+  ]
 }

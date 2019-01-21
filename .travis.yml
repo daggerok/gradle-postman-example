@@ -2,13 +2,11 @@ env:
   global:
     TERM=dumb
 language: java
-jdk:
-- oraclejdk8
-- openjdk8
+jdk: oraclejdk8
 install: true
-script: bash gradlew
+script: ./gradlew
 cache:
   directories:
-  - $HOME/.m2
-  - $HOME/.gradle
-  - node_modules
+    - $HOME/.m2
+    - $HOME/.gradle
+    - node_modules

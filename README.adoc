@@ -9,12 +9,22 @@ This repository contains example how to execute postman collection tests using g
 
 .unix
 ----
-bash gradlew
+./gradlew
+
+npm i /g serve
+serve build/postman
+
+./gradlew dependencyUpdates -Drevision=release
 ----
 
 .windows
 ----
 gradlew
+
+npm i /g serve
+serve build/postman
+
+gradlew dependencyUpdates -Drevision=release
 ----
 
 links:
