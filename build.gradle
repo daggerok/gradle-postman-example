@@ -23,7 +23,7 @@ version '1.0.2'
 node {
   download = true
   version = '10.15.0'
-  npmVersion = '5.10.0' // '6.6.0'
+  npmVersion = '5.10.0'
 }
 
 defaultTasks 'clean', 'build'
