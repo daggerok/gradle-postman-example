@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        tagsoupVersion = "1.2.1"
+        tagsoupVersion = '1.2.1'
     }
     repositories {
         mavenLocal()
@@ -12,55 +12,54 @@ buildscript {
 }
 
 plugins {
-    id "groovy"
-    id "com.moowork.node" version "1.2.0"
+    id 'groovy'
+    id 'com.moowork.node' version '1.2.0'
+    id 'com.github.ben-manes.versions' version '0.20.0'
 }
 
-group "daggerok"
-version "0.0.1"
+group 'daggerok'
+version '1.0.1'
 
 node {
     download = true
-    version = "9.4.0"
-    yarnVersion = "1.3.2"
-    npmVersion = "3.10.10"
+    version = '9.4.0' // '8.11.2'
+    npmVersion = '3.10.10' // '6.5.0'
 }
 
-defaultTasks "clean", "build"
+defaultTasks 'clean', 'build'
 
-build.dependsOn "yarn_-i", yarn_test
+build.dependsOn npm_install, npm_test
 
 static def fixPathOnWindows(def path) {
-    path.replaceAll("\\\\", "/")
+    path.replaceAll('\\\\', '/')
 }
 
 import org.ccil.cowan.tagsoup.Parser
 import groovy.xml.*
 
 build.doLast {
-
     def reports = project
         .file(fixPathOnWindows("$projectDir/newman"))
         .listFiles()
         .collect({ file -> file.absolutePath })
-        .findAll({ absolutePath -> absolutePath.endsWith(".html") })
+        .findAll({ absolutePath -> absolutePath.endsWith('.html') })
         .collect({ pathToHtmlReport -> fixPathOnWindows(pathToHtmlReport) })
         .collect({ fixedPathToReport -> file(fixedPathToReport) })
         .collect({ htmlReport -> htmlReport.text })
         .collect({ html ->
             def parser = new Parser()
-            parser.setFeature("http://xml.org/sax/features/namespaces", false)
+            parser.setFeature('http://xml.org/sax/features/namespaces', false)
             def root = new XmlSlurper(parser).parseText(html)
             new StreamingMarkupBuilder().bindNode(root.body.div[0]).toString()
         })
-        .join("<br/>")
+        .join('<br/>')
 
     def templatePath = fixPathOnWindows("$projectDir/src/main/html/report.html")
     def template = file(templatePath).text
     def reportDir = file(fixPathOnWindows("$buildDir/postman"))
 
     reportDir.mkdirs()
-    file("$reportDir/index.html").text = template.replace("%REPLACEMENT%", reports)
+    file("$reportDir/index.html").text = template.replace('%REPLACEMENT%', reports)
     println("""report located here: ${fixPathOnWindows("$buildDir/postman/index.html")}""")
 }
 
@@ -68,11 +67,10 @@ clean.doFirst {
     [
         "$projectDir/newman",
         "$projectDir/node_modules"
-
     ].each { delete "$it" }
 }
 
 wrapper {
-    gradleVersion = "4.6"
-    distributionType = "ALL"
+    gradleVersion = '5.1.1'
+    distributionType = Wrapper.DistributionType.BIN
 }
